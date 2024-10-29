@@ -18,7 +18,7 @@ const ConfirmAppointmentScreen = ({ navigation }: Props) => {
       <Center flex={1} bg="white">
         <Box>
           <Text>A farmácia está aberta nesse horário!</Text>
-          <Button mt={4} onPress={() => navigation.navigate('ConsultationsList')}>
+          <Button colorScheme="purple" mt={4} onPress={() => navigation.navigate('ConsultationsList')}>
             Voltar para lista de farmácias
           </Button>
         </Box>

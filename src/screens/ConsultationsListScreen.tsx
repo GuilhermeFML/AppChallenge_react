@@ -13,9 +13,9 @@ type Props = {
 };
 
 const mockConsultations = [
-  { id: '1', nome: 'Farmácia 1', hora: '09:00', status: 'Aberta 24hrs' },
-  { id: '2', nome: 'Farmácia 2', hora: '23:00', status: 'Aberta 24hrs' },
-  { id: '3', nome: 'Farmácia 3', hora: '16:00', status: 'Aberta 24hrs' },
+  { id: '1', nome: 'Farmácia 1', hora: '09:00', status: 'Aberta 24hrs', endereco: 'Av. Lins de Vasconcelos, 1505' },
+  { id: '2', nome: 'Farmácia 2', hora: '23:00', status: 'Aberta 24hrs', endereco: 'Av. Lins de Vasconcelos, 1707' },
+  { id: '3', nome: 'Farmácia 3', hora: '16:00', status: 'Aberta 24hrs', endereco: 'Av. Lins de Vasconcelos, 331' },
 ];
 
 const ConsultationsListScreen = ({ navigation }: Props) => {
@@ -30,7 +30,8 @@ const ConsultationsListScreen = ({ navigation }: Props) => {
                 <Text>{item.nome}</Text>
                 <Text>Horário: {item.hora}</Text>
                 <Text>Status: {item.status}</Text>
-                <Button mt={2} onPress={() => navigation.navigate('ScheduleConsultation')}>
+                <Text>Endereço: {item.endereco}</Text>
+                <Button colorScheme="purple" mt={2} onPress={() => navigation.navigate('ScheduleConsultation')}>
                   Detalhes
                 </Button>
               </Box>
