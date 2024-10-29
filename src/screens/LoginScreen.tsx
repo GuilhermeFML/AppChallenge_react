@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NativeBaseProvider, Box, Button, Input, Center, Text, Alert } from 'native-base';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../navigation/AppNavigator'; // Importação da tipagem correta
+import { RootStackParamList } from '../navigation/AppNavigator'; 
 
 type LoginScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Login'>;
 
@@ -16,7 +16,7 @@ const LoginScreen = ({ navigation }: Props) => {
   const [error, setError] = useState('');
 
   const handleLogin = async () => {
-    // Verifica se o nome de usuário e a senha estão preenchidos
+    
     if (!username) {
       setError('Por favor, insira um nome de usuário.');
       return;
@@ -26,18 +26,18 @@ const LoginScreen = ({ navigation }: Props) => {
       return;
     }
 
-    // Recupera os dados armazenados no AsyncStorage
+  
     const storedUsername = await AsyncStorage.getItem('username');
     const storedPassword = await AsyncStorage.getItem('password');
 
-    // Verifica as credenciais
+   
     if (username !== storedUsername || password !== storedPassword) {
       setError('Nome de usuário ou senha incorretos.');
       return;
     }
 
-    setError(''); // Limpa erro se os dados estiverem corretos
-    navigation.navigate('ConsultationsList'); // Navega se as credenciais forem válidas
+    setError(''); 
+    navigation.navigate('ConsultationsList');
   };
 
   return (
