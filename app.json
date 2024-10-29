@@ -12,9 +12,21 @@
       "backgroundColor": "#A020F0"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Precisamos da sua localização para mostrar farmácias próximas.",
+        "GMSApiKey": "AIzaSyA7MnrBydlrNRKCYYXXZmEM7tAi_nTblss"
+      }
     },
     "android": {
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyA7MnrBydlrNRKCYYXXZmEM7tAi_nTblss"
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#A020F0"
@@ -24,4 +36,5 @@
       "favicon": "./assets/favicon.png"
     }
   }
+}
 }
