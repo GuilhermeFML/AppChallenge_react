@@ -3,7 +3,7 @@ import { View, Text, FlatList, Alert, StyleSheet } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 
-// Definição da interface Pharmacy
+
 interface Pharmacy {
   id: string;
   name: string;
@@ -11,7 +11,7 @@ interface Pharmacy {
   longitude: number;
 }
 
-// Lista de farmácias com dados simulados
+
 const pharmacies: Pharmacy[] = [
   { id: '1', name: 'Farmácia A', latitude: -23.512, longitude: -46.627 },
   { id: '2', name: 'Farmácia B', latitude: -23.515, longitude: -46.629 },
@@ -29,7 +29,7 @@ export default function PharmacyMapScreen() {
       }
 
       const loc = await Location.getCurrentPositionAsync({});
-      console.log("Localização obtida:", loc); // Log da localização
+      console.log("Localização obtida:", loc);
       setLocation(loc);
     })();
   }, []);
@@ -47,8 +47,8 @@ export default function PharmacyMapScreen() {
               latitudeDelta: 0.01,
               longitudeDelta: 0.01,
             }}
-            showsUserLocation={true} // Exibe a localização do usuário
-            showsMyLocationButton={true} // Botão para localização
+            showsUserLocation={true} 
+            showsMyLocationButton={true} 
           >
             {/* Marcadores de Farmácias */}
             {pharmacies.map(pharmacy => (
