@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NativeBaseProvider, Box, Button, Center, Select, Text } from 'native-base';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../navigation/AppNavigator'; // Importação da tipagem correta
+import { RootStackParamList } from '../navigation/AppNavigator'; 
 
 type ScheduleConsultationScreenNavigationProp = NativeStackNavigationProp<
   RootStackParamList,
@@ -15,11 +15,11 @@ type Props = {
 const ScheduleConsultationScreen = ({ navigation }: Props) => {
   const [selectedTime, setSelectedTime] = useState('');
 
-  // Função para gerar opções de horário
+  
   const generateTimeOptions = () => {
     const times = [];
     for (let hour = 0; hour < 24; hour++) {
-      const formattedHour = hour.toString().padStart(2, '0') + ':00'; // Formata para "00:00", "01:00", etc.
+      const formattedHour = hour.toString().padStart(2, '0') + ':00'; 
       times.push(
         <Select.Item key={formattedHour} label={formattedHour} value={formattedHour} />
       );
